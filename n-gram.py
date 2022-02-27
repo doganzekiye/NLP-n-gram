@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import time
 start_time = time.time()
 
-file = open("D:/CME4408/assignment1/Novel-Samples/grimms-fairy-tales_P1.txt","r")
+file = open("xxx.txt","r")
 
 turkish_stopwords = stopwords.words('turkish')
 english_stopwords = set(stopwords.words('english'))
