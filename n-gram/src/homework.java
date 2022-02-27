@@ -12,7 +12,7 @@ public class homework {
 	static List<String> turkish_stopwords = new ArrayList<String>();
 	static List<String> english_stopwords = new ArrayList<String>();
 	static List<String> wordFiltered = new ArrayList<String>();
-	static String filePath = "D:/CME4408/assignment1/Novel-Samples/grimms-fairy-tales_P1.txt";
+	static String filePath = "xxx.txt";
 
 	public static void main(String[] args) throws IOException {
 		long startTime = System.currentTimeMillis();
@@ -104,8 +104,8 @@ public class homework {
 			element = element.toLowerCase();
 			element = element.replaceAll("[0123456789]", "");
 			element = element.replaceAll("\\p{Punct}", "");
-			element = element.replaceAll("‘", "");
-			element = element.replaceAll("’", "");
+			element = element.replaceAll("â€˜", "");
+			element = element.replaceAll("â€™", "");
 			if (element != null && element != "")
 				wordFiltered.add(element);
 		}
@@ -128,31 +128,31 @@ public class homework {
 	}
 
 	public static void createTurkishStopWords() {
-		String[] array = { "birşey", "birkaç", "biri", "belki", "bazı", "az", "aslında", "ama", "acaba", "eğer", "en",
-				"diye", "defa", "de", "daha", "da", "bu", "biz", "kez", "için", "ise", "ile", "hiç", "her", "hepsi",
-				"hep", "gibi", "nerde", "neden", "ne", "nasıl", "mı", "mü", "mu", "kim", "hem", "siz", "sanki", "o",
-				"niçin", "niye", "nereye", "nerede", "ki", "şu", "şey", "çünkü", "çok", "yani", "ya", "veya", "ve",
-				"tüm", "a", "altı", "altmış", "ancak", "arada", "artık", "asla", "ayrıca", "bana", "bazen", "bazıları",
-				"ben", "benden", "beni", "benim", "beri", "beş", "bile", "bilhassa", "bin", "bir", "biraz", "birçoğu",
-				"birçok", "birisi", "bizden", "bize", "bizi", "bizim", "böyle", "böylece", "buna", "bunda", "bundan",
-				"bunlar", "bunları", "bunların", "bunu", "bunun", "burada", "bütün", "çoğu", "çoğunu", "dahi", "dan",
-				"değil", "diğer", "diğeri", "diğerleri", "doksan", "dokuz", "dolayı", "dolayısıyla", "dört", "e",
+		String[] array = { "birÃ¾ey", "birkaÃ§", "biri", "belki", "bazÃ½", "az", "aslÃ½nda", "ama", "acaba", "eÃ°er", "en",
+				"diye", "defa", "de", "daha", "da", "bu", "biz", "kez", "iÃ§in", "ise", "ile", "hiÃ§", "her", "hepsi",
+				"hep", "gibi", "nerde", "neden", "ne", "nasÃ½l", "mÃ½", "mÃ¼", "mu", "kim", "hem", "siz", "sanki", "o",
+				"niÃ§in", "niye", "nereye", "nerede", "ki", "Ã¾u", "Ã¾ey", "Ã§Ã¼nkÃ¼", "Ã§ok", "yani", "ya", "veya", "ve",
+				"tÃ¼m", "a", "altÃ½", "altmÃ½Ã¾", "ancak", "arada", "artÃ½k", "asla", "ayrÃ½ca", "bana", "bazen", "bazÃ½larÃ½",
+				"ben", "benden", "beni", "benim", "beri", "beÃ¾", "bile", "bilhassa", "bin", "bir", "biraz", "birÃ§oÃ°u",
+				"birÃ§ok", "birisi", "bizden", "bize", "bizi", "bizim", "bÃ¶yle", "bÃ¶ylece", "buna", "bunda", "bundan",
+				"bunlar", "bunlarÃ½", "bunlarÃ½n", "bunu", "bunun", "burada", "bÃ¼tÃ¼n", "Ã§oÃ°u", "Ã§oÃ°unu", "dahi", "dan",
+				"deÃ°il", "diÃ°er", "diÃ°eri", "diÃ°erleri", "doksan", "dokuz", "dolayÃ½", "dolayÃ½sÃ½yla", "dÃ¶rt", "e",
 				"edecek", "eden", "ederek", "edilecek", "ediliyor", "edilmesi", "ediyor", "elbette", "elli", "etmesi",
-				"etti", "ettiği", "ettiğini", "fakat", "falan", "filan", "gene", "gereği", "gerek", "göre", "hala",
-				"halde", "halen", "hangi", "hangisi", "hani", "hatta", "henüz", "herhangi", "herkes", "herkese",
-				"herkesi", "herkesin", "hiçbir", "hiçbiri", "i", "ı", "içinde", "iki", "ilgili", "işte", "itibaren",
-				"itibariyle", "kaç", "kadar", "karşın", "kendi", "kendilerine", "kendine", "kendini", "kendisi",
-				"kendisine", "kendisini", "kime", "kimi", "kimin", "kimisi", "kimse", "kırk", "madem", "mi", "milyar",
-				"milyon", "nedenle", "neyse", "nin", "nın", "nun", "nün", "öbür", "olan", "olarak", "oldu", "olduğu",
-				"olduğunu", "olduklarını", "olmadı", "olmadığı", "olmak", "olması", "olmayan", "olmaz", "olsa", "olsun",
-				"olup", "olur", "olursa", "oluyor", "on", "ön", "ona", "önce", "ondan", "onlar", "onlara", "onlardan",
-				"onları", "onların", "onu", "onun", "orada", "öte", "ötürü", "otuz", "öyle", "oysa", "pek", "rağmen",
-				"sana", "şayet", "şekilde", "sekiz", "seksen", "sen", "senden", "seni", "senin", "şeyden", "şeye",
-				"şeyi", "şeyler", "şimdi", "sizden", "size", "sizi", "sizin", "sonra", "şöyle", "şuna", "şunları",
-				"şunu", "ta", "tabii", "tam", "tamam", "tamamen", "tarafından", "trilyon", "tümü", "u", "ü", "üç", "un",
-				"ün", "üzere", "var", "vardı", "yapacak", "yapılan", "yapılması", "yapıyor", "yapmak", "yaptı",
-				"yaptığı", "yaptığını", "yaptıkları", "ye", "yedi", "yerine", "yetmiş", "yi", "yı", "yine", "yirmi",
-				"yoksa", "yu", "yüz", "zaten", "zira" };
+				"etti", "ettiÃ°i", "ettiÃ°ini", "fakat", "falan", "filan", "gene", "gereÃ°i", "gerek", "gÃ¶re", "hala",
+				"halde", "halen", "hangi", "hangisi", "hani", "hatta", "henÃ¼z", "herhangi", "herkes", "herkese",
+				"herkesi", "herkesin", "hiÃ§bir", "hiÃ§biri", "i", "Ã½", "iÃ§inde", "iki", "ilgili", "iÃ¾te", "itibaren",
+				"itibariyle", "kaÃ§", "kadar", "karÃ¾Ã½n", "kendi", "kendilerine", "kendine", "kendini", "kendisi",
+				"kendisine", "kendisini", "kime", "kimi", "kimin", "kimisi", "kimse", "kÃ½rk", "madem", "mi", "milyar",
+				"milyon", "nedenle", "neyse", "nin", "nÃ½n", "nun", "nÃ¼n", "Ã¶bÃ¼r", "olan", "olarak", "oldu", "olduÃ°u",
+				"olduÃ°unu", "olduklarÃ½nÃ½", "olmadÃ½", "olmadÃ½Ã°Ã½", "olmak", "olmasÃ½", "olmayan", "olmaz", "olsa", "olsun",
+				"olup", "olur", "olursa", "oluyor", "on", "Ã¶n", "ona", "Ã¶nce", "ondan", "onlar", "onlara", "onlardan",
+				"onlarÃ½", "onlarÃ½n", "onu", "onun", "orada", "Ã¶te", "Ã¶tÃ¼rÃ¼", "otuz", "Ã¶yle", "oysa", "pek", "raÃ°men",
+				"sana", "Ã¾ayet", "Ã¾ekilde", "sekiz", "seksen", "sen", "senden", "seni", "senin", "Ã¾eyden", "Ã¾eye",
+				"Ã¾eyi", "Ã¾eyler", "Ã¾imdi", "sizden", "size", "sizi", "sizin", "sonra", "Ã¾Ã¶yle", "Ã¾una", "Ã¾unlarÃ½",
+				"Ã¾unu", "ta", "tabii", "tam", "tamam", "tamamen", "tarafÃ½ndan", "trilyon", "tÃ¼mÃ¼", "u", "Ã¼", "Ã¼Ã§", "un",
+				"Ã¼n", "Ã¼zere", "var", "vardÃ½", "yapacak", "yapÃ½lan", "yapÃ½lmasÃ½", "yapÃ½yor", "yapmak", "yaptÃ½",
+				"yaptÃ½Ã°Ã½", "yaptÃ½Ã°Ã½nÃ½", "yaptÃ½klarÃ½", "ye", "yedi", "yerine", "yetmiÃ¾", "yi", "yÃ½", "yine", "yirmi",
+				"yoksa", "yu", "yÃ¼z", "zaten", "zira" };
 
 		Collections.addAll(turkish_stopwords, array);
 	}
@@ -172,7 +172,7 @@ public class homework {
 				"about", "isn't", "themselves", "by", "through", "wasn't", "o", "until", "theirs", "for", "up",
 				"wouldn", "against", "as", "mustn't", "not", "where", "aren't", "t", "its", "each", "ve", "doing",
 				"who", "during", "an", "couldn", "hasn", "the", "on", "down", "mightn", "can", "just", "that", "weren",
-				"both", "shouldn", "very", "further", "than", "it", "myself", "ı" };
+				"both", "shouldn", "very", "further", "than", "it", "myself", "Ã½" };
 
 		Collections.addAll(english_stopwords, array);
 	}
